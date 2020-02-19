@@ -12,6 +12,8 @@ enum GameObjectType {
 	PLANE,
 	START_BUTTON,
 	ROLL_BUTTON,
+	DICE_1,
+	DICE_2,
 	NUM_OF_TYPES
 };
 

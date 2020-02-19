@@ -10,6 +10,8 @@ public:
 	~RollButton();
 
 	bool ButtonClick() override;
+	int die1;
+	int die2;
 private:
 	bool m_isClicked;
 };

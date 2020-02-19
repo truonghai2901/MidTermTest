@@ -13,6 +13,7 @@ Level1Scene::~Level1Scene()
 
 void Level1Scene::draw()
 {
+	//draw label and button
 	m_pLabel1->draw();
 	m_pLabel2->draw();
 	m_pRollButton->draw();
@@ -22,6 +23,10 @@ void Level1Scene::update()
 {
 	m_pRollButton->setMousePosition(m_mousePosition);
 	m_pRollButton->ButtonClick();
+
+	m_pLabel2->setText((std::to_string(m_pRollButton->die1)));
+	m_pLabel1->setText((std::to_string(m_pRollButton->die2)));
+	
 
 }
 
@@ -126,11 +131,11 @@ void Level1Scene::handleEvents()
 void Level1Scene::start()
 {
 	SDL_Color black= { 0, 0, 0, 255 };
-	m_pLabel1 = new Label("2", "Consolas", 40, black,
+	m_pLabel1 = new Label("0", "Consolas", 40, black,
 		glm::vec2(Config::SCREEN_WIDTH * 0.75f, 200.0f));
 	m_pLabel1->setParent(this);
 	addChild(m_pLabel1);
-	m_pLabel2 = new Label("1", "Consolas", 40, black,
+	m_pLabel2 = new Label("0", "Consolas", 40, black,
 		glm::vec2(Config::SCREEN_WIDTH * 0.2f, 200.0f));
 	m_pLabel2->setParent(this);
 	addChild(m_pLabel2);
